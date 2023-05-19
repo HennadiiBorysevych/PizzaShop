@@ -4,7 +4,8 @@ import "./globals.css";
 //fonts export
 
 import { Bangers, Quicksand, Roboto_Condensed } from "next/font/google";
-
+import Nav from "./components/Nav";
+import CartMobileIcon from "./components/CartMobileIcon";
 const quicksand = Quicksand({
   subsets: ["latin"],
   variable: "--font-quicksand",
@@ -26,7 +27,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${quicksand.variable} ${bangers.variable} ${robotoCondensed.variable} font-quicksand`}
       >
-        {/* <h1 className="font-robotoCondensed text-8xl"></h1> */}
+        <Nav/>
+        <CartMobileIcon/>
         {children}
       </body>
     </html>
