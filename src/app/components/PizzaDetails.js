@@ -105,7 +105,7 @@ const PizzaDetails = ({ pizza }) => {
                 pizza.id,
                 pizza.image,
                 pizza.name,
-                price,
+                totalPrice,
                 additionalTopping,
                 size,
                 crust

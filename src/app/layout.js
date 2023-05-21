@@ -8,6 +8,7 @@ import Nav from "./components/Nav";
 import CartMobileIcon from "./components/CartMobileIcon";
 import CartProvider from "./context/CartContext";
 import CartMobile from "./components/CartMobile";
+import CartDesktop from "./components/CartDesktop";
 
 
 const quicksand = Quicksand({
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
         <CartMobileIcon/>
         <CartMobile/>
         {children}
+        <CartDesktop/>
       </body>
     </html>
     </CartProvider>
