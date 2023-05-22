@@ -5,7 +5,9 @@ import CartTop from "./CartTop";
 import CartBottom from "./CartBottom";
 import CartItem from "./CartItem";
 const CartMobile = () => {
+
   const { cart, isOpen } = useContext(CartContext);
+  
   return (
     <div
       className={`${

@@ -8,27 +8,28 @@ const CheckoutDetails = ({ setModal }) => {
   const [count, setCount] = useState(5);
 
   useEffect(() => {
+    let timer;
     if (successMsg) {
-      const timer = setTimeout(() => {
+      timer = setTimeout(() => {
         if (count > 1) {
           setCount(count - 1);
         }
       }, 1000);
     }
     return () => clearInterval(timer);
-  });
+  }, [successMsg, count]);
 
   useEffect(() => {
+    let timer;
     if (successMsg) {
-      const timer = setTimeout(() => {
+      timer = setTimeout(() => {
         setSuccessMsg(false);
-        setCart([])
-        setModal(false)
+        setCart([]);
+        setModal(false);
       }, 4000);
     }
-
-    return ()=> clearTimeout(timer)
-  },[successMsg]);
+    return () => clearTimeout(timer);
+  }, [successMsg, setCart, setModal]);
 
   return (
     <div>
@@ -37,7 +38,7 @@ const CheckoutDetails = ({ setModal }) => {
           <h2 className="text-2xl font-semibold text-center">
             Thank you! The order has been placed!
           </h2>
-          <Image scr={"/success-1.gif"} width={150} height={150} alt="" />
+          <Image src={"/success-1.gif"} width={150} height={150} alt="" />
           <div>
             This window will close in <span>{count}</span> seconds
           </div>
@@ -62,7 +63,6 @@ const CheckoutDetails = ({ setModal }) => {
                     placeholder="Last Name"
                   />
                 </div>
-
                 <div className="flex flex-col lg:flex-row justify-between gap-4 lg:gap-0 lg:gap-x-4">
                   <input
                     type="text"
@@ -112,7 +112,7 @@ const CheckoutDetails = ({ setModal }) => {
                 </div>
               </div>
             </div>
-            <div className="bg-yellow-400 flex-1 h-full lg:max-w-[40%] flex flex-col justify-between pt-3 px-8 lg:p-0">
+            <div className="flex-1 h-full lg:max-w-[40%] flex flex-col justify-between pt-3 px-8 lg:p-0">
               <div className="border rounded-lg flex flex-col mb-4 p-4 h-full ">
                 <h3 className="text-base font-extrabold uppercase mb-4 border-b pb-4">
                   Your order

@@ -9,6 +9,7 @@ import { CartContext } from "../context/CartContext";
 
 const CartDesktop = () => {
   const { isOpen, cart } = useContext(CartContext);
+  
   return (
     <div
       className={`${

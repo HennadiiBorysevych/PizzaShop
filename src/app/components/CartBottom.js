@@ -7,7 +7,7 @@ import { CartContext } from "../context/CartContext";
 
 const modalStyles = {
   overlay: {
-    backgroundColor: "rgba(0,0,0,5)",
+    backgroundColor: "rgba(0,0,0,0.5)",
   },
 };
 Modal.setAppElement("body");
@@ -50,7 +50,7 @@ const CartBottom = () => {
       {modal && (
         <Modal
           className="bg-white w-full h-full lg:max-w-[900px] lg:max-h-[600px] lg:rounded-[30px] 
-          lg:fixed lg:top-[50px] lg:left-[50px] 
+          lg:fixed lg:top-[50%] lg:left-[50%] 
           lg:translate-x-[-50%] lg:translate-y-[-50%] outline-none"
           isOpen={modal}
           style={modalStyles}

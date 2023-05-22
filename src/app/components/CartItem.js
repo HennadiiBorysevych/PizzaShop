@@ -53,7 +53,7 @@ const CartItem = ({ pizza }) => {
           </div>
           <div>
             <span className="text-[17px] font-medium font-robotoCondensed">
-              ${parseFloat(pizza.totalPrice * pizza.amount).toFixed(2)}
+              ${parseFloat(pizza.price * pizza.amount).toFixed(2)}
             </span>
           </div>
         </div>

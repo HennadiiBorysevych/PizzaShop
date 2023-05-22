@@ -2,10 +2,11 @@
 "use client";
 import React, { useState, createContext, useEffect } from "react";
 export const CartContext = createContext();
+
 const CartProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [cart, setCart] = useState([]);
-  const [cartTotal, setCarTotal] = useState(0);
+  const [cartTotal, setCartTotal] = useState(0);
   const [itemAmount, setItemAmount] = useState(0);
 
   useEffect(() => {
@@ -13,13 +14,13 @@ const CartProvider = ({ children }) => {
       return a + c.amount;
     }, 0);
     setItemAmount(amount);
-  }, []);
+  }, [cart]);
 
   useEffect(() => {
     const price = cart.reduce((a, c) => {
       return a + Number(c.price) * c.amount;
     }, 0);
-    setCarTotal(price);
+    setCartTotal(price);
   }, [cart]);
 
   const addToCart = (
@@ -31,7 +32,7 @@ const CartProvider = ({ children }) => {
     size,
     crust
   ) => {
-    additionalTopping.sort((a, b) => a.name?.localCompare(b.name));
+    additionalTopping.sort((a, b) => a.name?.localeCompare(b.name));
 
     const newItem = {
       id,
