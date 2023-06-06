@@ -28,8 +28,8 @@ const CartBottom = () => {
       {cart.length >= 1 ? (
         <div className="px-6 py-3 lg:py-6 mt-auto">
           <div className="flex items-center justify-center mb-6 text-lg font-semibold font-robotoCondensed">
-            <div>Total:</div>
-            <div>${parseFloat(cartTotal).toFixed(2)}</div>
+            <p>Total:</p>
+            <p>${parseFloat(cartTotal).toFixed(2)}</p>
           </div>
           <div className="flex flex-col gap-y-3">
             <button
@@ -44,7 +44,7 @@ const CartBottom = () => {
         </div>
       ) : (
         <div className="absolute top-0 w-full h-full flex justify-center items-center -z-10">
-          <div className="font-semibold">Your cart is empty</div>
+          <h2 className="font-semibold">Your cart is empty</h2>
         </div>
       )}
       {modal && (

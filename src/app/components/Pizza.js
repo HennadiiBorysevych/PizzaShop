@@ -39,15 +39,15 @@ const Pizza = ({ pizza }) => {
         alt=""
         priority={1}
       />
-      <div
+      <h3
         onClick={openModal}
         className="text-x1 font-bold mb-3 capitalize cursor-pointer "
       >
         {pizza.name}
-      </div>
-      <div className="text-sm font-medium min-h-[60px] mb-6">
+      </h3>
+      <p className="text-sm font-medium min-h-[60px] mb-6">
         {pizza.description}
-      </div>
+      </p>
       <div className="mb-6 flex items-center justify-between">
         <div className="hidden lg:flex text-x1 font-semibold">
           starts at {pizza.priceSm}

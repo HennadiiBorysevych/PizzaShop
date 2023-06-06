@@ -49,7 +49,7 @@ const PizzaDetails = ({ pizza, setModal }) => {
   }, [additionalTopping]);
 
   return (
-    <div className="flex flex-col lg:flex-row lg:gap-x-8 h-full md:p-8 ">
+    <section className="flex flex-col lg:flex-row lg:gap-x-8 h-full md:p-8 ">
       <div className="lg:flex-1 flex justify-center items-center">
         <div className="max-w-[300px] lg:max-w-none mt-6  lg:mt-0">
           <Image
@@ -57,7 +57,7 @@ const PizzaDetails = ({ pizza, setModal }) => {
             width={450}
             height={450}
             src={pizza.image}
-            alt=""
+            alt="pizza"
           />
         </div>
       </div>
@@ -84,7 +84,7 @@ const PizzaDetails = ({ pizza, setModal }) => {
             </div>
             <SizeSelection pizza={pizza} size={size} setSize={setSize} />
             <CrustSelection crust={crust} setCrust={setCrust} />
-            <h2 className="mb-4 text-xl font-semibold">Choose toppings</h2>
+            <h3 className="mb-4 text-xl font-semibold">Choose toppings</h3>
             <ul className="flex flex-1 flex-wrap gap-2 py-1 justify-center lg:justify-start">
               {pizza.toppings?.map((topping, index) => (
                 <li key={index}>
@@ -115,12 +115,12 @@ const PizzaDetails = ({ pizza, setModal }) => {
             }}
             className="btn btn-lg gradient w-full flex justify-center gap-x-2"
           >
-            <div>Add to cart for</div>
-            <div>${price}</div>
+            <p>Add to cart for</p>
+            <p>${price}</p>
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
